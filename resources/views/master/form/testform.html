@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input v-model="formData.name">
+    <hr>
+    <textarea v-model="formData.message"></textarea>
+
+    <label>chckbox1</label>
+    <input type="checkbox" value="checkbox1" v-model="formData.checkbox">
+    {{formData.checkbox1}}
+    <label>checkbox2</label>
+    <input type="checkbox" value="checkbox2" v-model="formData.checkbox">
+    {{formData.checkbox2}}
+    <hr>
+    <label>radio1</label>
+    <input type="radio" value="radio1" v-model="formData.radio">
+    <label>radio2</label>
+    <input type="radio" value="radio2" v-model="formData.radio">
+    {{formData.radio}}
+    <hr>
+    <label>select one</label>
+    <select v-model="formData.list">
+        <option v-for="(list,index) in lists":key="list">{{index}}</option>
+    </select>
+    <button v-on:click.prevent="submitForm()">submit</button>
+
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>Vue.createApp({
+    data() {
+        return {
+            lists:['php','js','c#'],
+            formData: {
+                name: '',
+                message: '',
+                checkbox:[],
+                radio:'',
+                list:''
+            }
+        }
+    }, methods: {
+        submitForm() {
+            console.log(this.formData)
+        }
+    }
+}).mount('#app')</script>
+</body>
+</html>

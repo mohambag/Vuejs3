@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <span>{{name}}</span>
+    <button v-on:click="clickFunc">click</button>
+    <button v-on:click="clickName('reza')">click(reza)</button>
+    <button v-on:click="clickEvent($event,'reza')">click(event)</button>
+    <button v-on:click.right="clickFunc('right')">click(right)</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                name:"ali"
+            }
+        },methods:{
+            clickFunc(){
+                return this.name="javad"
+                // return this.name="javad"
+            },
+            clickName(name){
+                return this.name=name
+            },
+            clickEvent(event,name){
+                // return name
+                console.log(name ,event);
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

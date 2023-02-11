@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red {
+            background: red;
+        }
+        .blue{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div
+        v-bind:class="{red:true}"
+        :style="{newStyle}"
+    >hello</div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                fontSize:'10px'
+            }
+        },methods:{
+            newStyle(){
+               return ['fontSize':'17px','color':'blue']
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <div ref="title">salam</div>
+    <button v-on:click="button()">click</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>Vue.createApp({
+    data() {
+        return {}
+    }, methods: {
+        button() {
+            this.$refs.title.style.color = 'red'
+            this.$refs.title.style.fontSize = '35px'
+        }
+    }
+}).mount('#app')</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input v-model="name">
+    <button v-on:click="toggleActive()">click active</button>
+    <div>{{ upperCase() }}</div>
+    <span>Active: {{ isActive }}</span>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                name: '',
+                active: true
+            }
+        },
+        watch:{
+            active(value){
+                console.log(value);
+            }
+        },
+        computed:{
+            isActive() {
+                console.log( this.active)
+                return this.active ? 'isActive' : 'Not active'
+            },
+        }, methods: {
+            upperCase() {
+                return this.name.toUpperCase()
+            },
+
+            toggleActive() {
+                return this.active = !this.active
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

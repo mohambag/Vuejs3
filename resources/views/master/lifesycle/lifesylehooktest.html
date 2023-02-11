@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <span>{{name}}</span>
+    <span>{{name}}</span>
+    <button v-on:click="updateName()">update</button>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    Vue.createApp({
+        data(){
+            return {
+                name:''
+            }
+        },
+        methods:{
+            updateName(){
+                return this.name='ali'
+            }
+        },
+        beforeCreate(){
+            console.log('beforeCreate')
+        },
+        created(){
+            console.log('created')
+        },
+        beforeMount(){
+            console.log('beforeMount')
+        },
+        mounted(){
+            console.log('Mounted')
+        },
+        beforeUpdate(){
+            console.log('beforeUpdate')
+        },
+        updated(){
+            console.log('update')
+        },
+        watch:{
+            name(){
+                setTimeout(()=>{this.name='javad'} ,2000)
+                // this.name='javad'
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

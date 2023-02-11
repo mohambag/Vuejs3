@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <div v-for="(index , item) in names" :key="index">{{ index }} / {{item}}</div>
+
+    <hr>
+
+    <div v-for="(item,index) in list" :key="index">{{ item.name }} => {{ item.age }}</div>
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                names: ['ali', 'javad', 'reza'],
+                list: [
+                    {
+                        name: "ali",
+                        age: 25
+                    },
+                    {
+                        name: "javad",
+                        age: 20
+                    },
+                    {
+                        name: "reza",
+                        age: 23
+                    },
+                ]
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <span v-if="number>4">if</span>
+    <span v-else-if="number<3">else if</span>
+    <span v-else>else if</span>
+    <hr>
+    <span v-show="checkIs">hello</span>
+    <hr>
+    <span v-if="checkData()">checked</span>
+
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                number: 4,
+                checkIs:true
+            }
+        },
+        methods: {
+            checkData() {
+                return this.number == 4 ? true : false
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

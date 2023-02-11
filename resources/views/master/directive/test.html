@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <img v-bind:src="src">
+
+    <br>
+
+    <span v-text="text"></span>
+    <hr>
+    <span v-html="html"></span>
+
+
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    Vue.createApp(
+        {
+            data() {
+                return {
+                    title: "ali",
+                    src: "https://picsum.photos/200/300",
+                    text: "Just add your desired image size (width & height) after our URL, and you'll get ",
+                    html: '<strong>Just add your</strong>'
+                }
+            }
+        }
+    ).mount('#app');
+</script>
+</body>
+</html>
