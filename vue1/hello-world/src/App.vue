@@ -2,9 +2,9 @@
     <div id="app">
 
         <p>
-            <router-link to="/">Go to Home</router-link>
-            <router-link to="/user">Go to Users</router-link>
-            <router-link to="/post">Go to Posts</router-link>
+            <router-link active-class="router-link-active" to="/">Go to Home</router-link>
+            <router-link active-class="router-link-active" to="/user">Go to Users</router-link>
+            <router-link active-class="router-link-active" to="/post">Go to Posts</router-link>
         </p>
         <router-view></router-view>
 
@@ -130,5 +130,8 @@ export default {
 <style>
 .marginClass{
     margin-right: 5px;
+}
+.router-link-active{
+ color: green;
 }
 </style>

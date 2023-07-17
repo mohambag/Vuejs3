@@ -19,12 +19,17 @@ import {ref} from "vue";
 import {useRouter} from "vue-router";
 
 export default {
+    // beforeRouteEnter(to, from, next) {
+    //     console.log('Before Route Enter');
+    //     next
+    // },
+
     setup() {
         const title = ref("User Page");
         const router = useRouter();
 
         function goToShowUser() {
-            router.push({name: "showUser",params:{"id":5},query:{name:'mohammad',lastname:'Bagri'}})
+            router.push({name: "showUser", params: {"id": 5}, query: {name: 'mohammad', lastname: 'Bagri'}})
         }
 
         return {title, goToShowUser};

@@ -7,28 +7,26 @@
             asperiores! Suscipit maxime in dolorem excepturi sequi voluptates,
             pariatur quas commodi neque quis repudiandae a natus cum, quo non?
         </p>
-        <button v-on:click="routeHome()">Home</button>
-        <router-view></router-view>
 
-        <hr>
+        <h3>{{ route.params }}</h3>
     </div>
 </template>
 
 <script>
 import {ref} from "vue";
-import {useRouter} from "vue-router";
-
+import {useRoute, useRouter} from "vue-router";
 
 export default {
     setup() {
         const title = ref("Post Page");
+
+        const route = useRoute();
         const router = useRouter();
+        console.log(route.params, router);
 
-        function routeHome() {
-            router.push('/');
-        }
 
-        return {title, routeHome};
+
+        return {title, route};
     },
 };
 </script>
